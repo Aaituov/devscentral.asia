@@ -1,0 +1,44 @@
+Hi! Here is an AppScript code that you can use to access Google Sheets, review the list of links to Cloud Skills Boost public profiles, review each profile, and calculate the number of badges:
+
+JavaScript
+/** @OnlyCurrentDoc */
+function calculateBadges() {
+  // Get the spreadsheet
+  var spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
+  var sheet = spreadsheet.getSheetByName("Links");
+
+  // Get the list of links
+  var links = sheet.getDataRange().getValues();
+
+  // Iterate through the list of links
+  for (var i = 0; i < links.length; i++) {
+    var link = links[i][0];
+
+    // Get the profile data
+    var profileData = UrlFetchApp.fetch(link).getContentText();
+
+    // Parse the profile data to get the number of badges
+    var numberOfBadges = parseProfileData(profileData);
+
+    // Write the number of badges to the spreadsheet
+    sheet.getRange(i + 2, 2).setValue(numberOfBadges);
+  }
+}
+
+function parseProfileData(profileData) {
+  // Parse the profile data to get the number of badges
+  var badges = profileData.match(/"badges":\[(.*?)}\]/);
+  if (badges && badges.length > 0) {
+    var badgesData = JSON.parse(badges[1]);
+    return badgesData.length;
+  } else {
+    return 0;
+  }
+}
+
+
+To use this code, you will need to copy and paste it into a new Google Apps Script project. Then, you will need to replace the following values:
+The name of the spreadsheet that contains the list of links to Cloud Skills Boost public profiles
+The name of the sheet in the spreadsheet that contains the list of links
+The range of cells in the spreadsheet that contains the number of badges for each profile
+Once you have replaced the values, you can save the code and run it. The code will access the Google Sheet, review the list of links to Cloud Skills Boost public profiles, review each profile, and calculate the number of badges. The number of badges for each profile will be written to the spreadsheet.

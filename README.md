@@ -1,3 +1,5 @@
+Hi! Some of the tutorials and code walkthroughs are available via our youtube channel https://www.youtube.com/@askaraituov
+
 # Appscript and GenAI tutorials
 Lesson 1
 **The task.**

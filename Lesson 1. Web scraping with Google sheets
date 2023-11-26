@@ -43,9 +43,10 @@ function parseProfileData(profileData) {
   }
 }
 
-
+/**
 To use this code, you will need to copy and paste it into a new Google Apps Script project. Then, you will need to replace the following values:
 The name of the spreadsheet that contains the list of links to Cloud Skills Boost public profiles
 The name of the sheet in the spreadsheet that contains the list of links
 The range of cells in the spreadsheet that contains the number of badges for each profile
 Once you have replaced the values, you can save the code and run it. The code will access the Google Sheet, review the list of links to Cloud Skills Boost public profiles, review each profile, and calculate the number of badges. The number of badges for each profile will be written to the spreadsheet.
+*/

@@ -1,4 +1,11 @@
-Hi! Here is an AppScript code that you can use to access Google Sheets, review the list of links to Cloud Skills Boost public profiles, review each profile, and calculate the number of badges:
+/** 
+Hi! Here is an AppScript code that you can use to access Google Sheets, review the list of links to Cloud Skills Boost public profiles, review each profile, and calculate the number of badges.
+Lesson 1
+**The task.**
+You should review an appscript code below. The app should do the following. It should access Google sheets. Review the list of links which lead to open cloudskillsboost public profiles. Review each profile and calculate number of badges. Here is an example of a cloudskillsboost public profile. https://www.cloudskillsboost.google/public_profiles/85a2f4b6-ce2a-4a67-a362-675c4a366772. Here is an example of a badge https://www.cloudskillsboost.google/public_profiles/85a2f4b6-ce2a-4a67-a362-675c4a366772/badges/4776948
+
+Please consider the code below and review if it's launchable. You can fork this code or alternatively you can create your own code. Regards, Askar  */
+
 
 JavaScript
 /** @OnlyCurrentDoc */

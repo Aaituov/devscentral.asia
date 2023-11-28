@@ -1,0 +1,54 @@
+The correct code. Author of this extension is Daniil Kaimekin. Daniil made corrections to original code developed by Askar Aituov
+`/**
+Hi! Here is an AppScript code that you can use to access Google Sheets, review the list of links to Cloud Skills Boost public profiles, review each profile, and calculate the number of badges.
+Lesson 1
+**The task.**
+You should review an appscript code below. The app should do the following. It should access Google sheets. Review the list of links which lead to open cloudskillsboost public profiles. Review each profile and calculate number of badges. Here is an example of a cloudskillsboost public profile. https://www.cloudskillsboost.google/public_profiles/85a2f4b6-ce2a-4a67-a362-675c4a366772. Here is an example of a badge https://www.cloudskillsboost.google/public_profiles/85a2f4b6-ce2a-4a67-a362-675c4a366772/badges/4776948
+ 
+Please consider the code below and review if it's launchable. You can fork this code or alternatively you can create your own code. Regards, Askar  */
+ 
+ 
+// JavaScript
+/** @OnlyCurrentDoc */
+function calculateBadges() {
+    // Get the spreadsheet
+    var spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
+    var sheet = spreadsheet.getSheetByName("Links");
+ 
+    // Get the list of links
+    var links = sheet.getDataRange().getValues();
+ 
+    // Iterate through the list of links
+    for (var i = 0; i < links.length; i++) {
+        var link = links[i][0];
+ 
+        // Get the profile data
+        var profileData = UrlFetchApp.fetch(link).getContentText();
+ 
+        // Parse the profile data to get the number of badges
+        var numberOfBadges = parseProfileData(profileData);
+ 
+        // Write the number of badges to the spreadsheet
+        // Adjusted the indexing here to start from row 2
+        sheet.getRange(i + 1, 2).setValue(numberOfBadges);
+    }
+}
+ 
+ 
+function parseProfileData(profileData) {
+    // Parse the profile data to get the number of badges
+    var regexPattern = /<div class=['"]profile-badge['"]>/g;
+    var matches = profileData.match(regexPattern);
+ 
+    // Count the number of matches
+    var numberOfMatches = matches ? matches.length : 0;
+    return numberOfMatches;
+}
+ 
+/**
+To use this code, you will need to copy and paste it into a new Google Apps Script project. Then, you will need to replace the following values:
+The name of the spreadsheet that contains the list of links to Cloud Skills Boost public profiles
+The name of the sheet in the spreadsheet that contains the list of links
+The range of cells in the spreadsheet that contains the number of badges for each profile
+Once you have replaced the values, you can save the code and run it. The code will access the Google Sheet, review the list of links to Cloud Skills Boost public profiles, review each profile, and calculate the number of badges. The number of badges for each profile will be written to the spreadsheet.
+*/`

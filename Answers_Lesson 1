@@ -1,4 +1,4 @@
-The correct code. Author of this extension is Daniil Kaimekin. Daniil made corrections to original code developed by Askar Aituov
+The correct code. Author of this extension is Daniil Kaimekin. Daniil made corrections to original code developed by Askar Aituov. Daniil used postman to retreive DIV class description. Then changed REGEX of Google bard generated code.
 `/**
 Hi! Here is an AppScript code that you can use to access Google Sheets, review the list of links to Cloud Skills Boost public profiles, review each profile, and calculate the number of badges.
 Lesson 1

@@ -19,3 +19,8 @@ Hi folkks! To receive free capabilities to generate/summarize text or image data
 
 **Week 1**
 We follow instructions from official Google developers Apps script fundamentals playlist https://developers.google.com/codelabs/apps-script-fundamentals-1?hl=en#4
+
+
+**Lesson 3**. Via Apps script we learn to publish out project online. Can be published as html/css or other forms. You can select any user authentification methods as well. More details on html service here:
+1 https://developers.google.com/apps-script/reference/html
+2  https://developers.google.com/apps-script/guides/html/communication
